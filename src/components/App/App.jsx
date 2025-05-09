@@ -15,12 +15,26 @@ function App() {
         city: "",
     });
 
-    const [formData, setFormData] = useState({
-        name:"",
-        url:'',
-    })
     const [activeModal, setActiveModal] = useState("");
     const [selectedCard, setSelectedCard] = useState({});
+     const [formData, setFormData] = useState({
+       name: "",
+       url: "",
+     });
+     const[errors, setErrors] = useState({});
+
+     const handleChange = (evt) => {
+        const {name, value } = evt.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+        const handleSubmit = (evt) => {
+          evt.preventDefault();
+     };
+    
 
     const handleCardClick = (card) => {
         setActiveModal("preview");
@@ -44,6 +58,7 @@ getweather(coordinates,APIKey )
 .catch(console.error);
     }, []);
 
+
     return (
       <div className="page">
         <div className="page__content">
@@ -51,7 +66,7 @@ getweather(coordinates,APIKey )
           <Main weatherData={weatherData} handleCardClick={handleCardClick} />
           <Footer />
         </div>
-        <ModalWithForm title="New garment" buttonText="Add garment" isOpen={activeModal === "add-garment"} onClose={closeActiveModal} >
+        <ModalWithForm title="New garment" buttonText="Add garment" isOpen={activeModal === "add-garment"} onClose={closeActiveModal} onSubmit={handleSubmit}  >
            
             <label htmlFor="name" className="modal__label">
                 Name{""}
@@ -60,6 +75,8 @@ getweather(coordinates,APIKey )
                 className="modal__input"
                 id="name"
                 placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
                 />
             </label>
           <label htmlFor="imageURL" className="modal__label">

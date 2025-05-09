@@ -13,15 +13,19 @@ function Header({handleAddClick, weatherData}) {
       <img className="header__logo" src={logo} alt="Logo" />
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}</p>
-      <button onClick={handleAddClick}
+      <button 
+      onClick={handleAddClick} 
        type="button" 
-       className= "header__add-clothes-btn">
+       className= "header__add-clothes-btn"
+       id="navbar"
+       >
         + Add Clothes
         </button>
       <div className="header__user-container">
         <p className="header__username">Terry Tegegne</p>
         <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
       </div>
+      
     </header>
   );
 }
