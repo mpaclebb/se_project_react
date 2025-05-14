@@ -14,7 +14,7 @@
 .header__date-and-location {
     margin: 0;
 }
-.header__add-clothes-btn{
+.header__button{
   margin: 0 20px 0 auto;
   border: none;
   font-family: "cabinent-Grotesk", arial, sans-serif;
@@ -22,6 +22,10 @@
   font-size: 20px;
   line-height: 24px;
 
+}
+
+.header__button:hover {
+  cursor: pointer;
 }
 
 .header__user-container {
