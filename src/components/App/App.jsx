@@ -31,6 +31,14 @@ function App() {
             ...formData,
             [name]: value,
         });
+        setErrors((prevErrors) => {
+          const newErrors = {
+            ...prevErrors,
+          };
+          delete newErrors[name];
+          return newErrors;
+        });
+        const newErrors = validate
     };
 
     const handleRadioChange = (evt) => {
@@ -95,6 +103,7 @@ getweather(coordinates,APIKey )
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
+                required
                 />
             </label>
           <label htmlFor="imageURL" className="modal__label">
@@ -106,6 +115,8 @@ getweather(coordinates,APIKey )
               placeholder="Image URL"
               name="url"
               value={formData.url}
+              onChange={handleChange}
+              required
             />
           </label>
           <fieldset className="modal__radio-buttons">
