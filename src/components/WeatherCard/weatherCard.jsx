@@ -1,7 +1,7 @@
 import "./weatherCard.css";
 import  React, { useContext } from "react";
 import { weatherOptions, defaultWeatherOptions } from "../../utils/constants";
-
+//it fails the test everytime I made the W in weathercard capitalized, what should I do?//
 
 function WeatherCard({weatherData}) {
     const filteredOptions = weatherOptions.filter((option) => {
