@@ -50,4 +50,8 @@
     margin: 0 auto;
     max-width: 100%;
   }
+
+  .page{
+    max-width: 100%;
+  }
 }
