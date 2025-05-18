@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import {coordinates,APIKey} from "../../utils/constants";
 import "./App.css";
 import Header from "../Header/Header";
-import Main from "../Main/main";
+import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
