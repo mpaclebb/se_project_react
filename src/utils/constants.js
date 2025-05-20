@@ -2,7 +2,7 @@ export const weatherOptions = [
   {
     day: true,
     condition: "clear",
-    url: new URL("../assests/day/clear.png", import.meta.url).href,
+    url: new URL("../assets/day/clear.png", import.meta.url).href,
   },
   {
     day: true,
