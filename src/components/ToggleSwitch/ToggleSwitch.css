@@ -1,50 +1,47 @@
-.toggle-switch{
-    width: 56px;
-    height: 28px;
-    border: 2px solid black;
-    border-radius: 20px;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
+.toggle-switch__label {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-right: 20px;
 }
 
-.toggle-switch__checkbox{
-    opacity: 0;
-
+.toggle-switch__checkbox {
+  border-radius: 20px;
+  border: 2px solid #7e7e7e;
+  width: 56px;
+  height: 28px;
+  appearance: none;
 }
 
-.toggle-switch__circle{
-    background-color: black;
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    border-radius: 50%;
-    left:0;
-    transition:all 0.2s;
-
+.toggle-switch__slider {
+  border-radius: 20px;
+  width: 28px;
+  height: 28px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
 }
 
-.toggle-switch__text {
-    color: grey;
-    position: absolute;
-    top: 5px;
-    left: 9px;
+.toggle-switch__slider-C {
+  left: 27px;
 }
 
-.toggle-switch__text{
-    color: grey;
-    position: absolute;
-    top: 5px;
+.toggle-switch__temp-F {
+  position: absolute;
+  font-size: 14px;
+  line-height: 17px;
+  left: 10px;
 }
 
-.toggle-switch__text_F{
-left: 9px;
+.toggle-switch__temp-C {
+  position: absolute;
+  font-size: 14px;
+  line-height: 17px;
+  left: 36px;
 }
 
-.toggle-switch__text_c{
-right: 9px;
-}
-
-.toggle-switch__checkbox:checked ~ .toggle-switch__circle{
- left: 28px;
+.toggle-switch__active {
+  color: #fff;
 }
