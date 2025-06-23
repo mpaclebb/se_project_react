@@ -1,18 +1,19 @@
 import "./WeatherCard.css";
+import React, { useContext } from "react";
 import { weatherOptions, defaultWeatherOptions } from "../../utils/constants";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 //it fails the test everytime I made the W in weathercard capitalized, what should I do?//
 
 function WeatherCard({weatherData}) {
- console.log("weatherData:", weatherData);
+ const { currentTemperatureUnit }= 
+ useContext((CurrentTemperatureUnitContext));
 
-    const filteredOptions = weatherOptions.filter((option) => {
+ const filteredOptions = weatherOptions.filter((option) => {
 return (
     option.day === weatherData.isDay && 
-option.condition === weatherData.condition
+    option.condition === weatherData.condition
 );
     });
-
-    console.log("Filtered Options:", filteredOptions);
 
 let weatherOption;
 if (filteredOptions.length ===0) {
@@ -26,12 +27,14 @@ if (filteredOptions.length ===0) {
 
     return (
     <section className="weather-card">
-    <p className="weather-card__temp">{weatherData.temp.F}  &deg; F </p>
-    <img 
+    <p className="weather-card__temp">
+        
+        {weatherData.temp[currentTemperatureUnit]}  
+         </p>
+         <img 
          src={weatherOption?.url} 
          alt={`Card showing ${weatherOption?.day ? "Day" : "night"
-          }time ${weatherOption?.Condition
-          } weather`}
+          }time ${weatherOption?.Condition} weather`}
          className="weather-card__image" />
          
     </section>
