@@ -1,7 +1,7 @@
 import "./AddItemModal.css"
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useFormAndValidation } from "../hooks/useFormAndValidation";
+import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 const AddItemModal = ({
   onClose,
