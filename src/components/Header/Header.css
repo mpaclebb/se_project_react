@@ -22,7 +22,7 @@
     margin: 0;
 }
 
-.header_nav-container{
+.header__nav-container{
 display: flex;
 margin: 0 0 0 auto;
 }
@@ -58,5 +58,13 @@ margin: 0 0 0 auto;
     visibility: hidden;
     border: none;
     background: transparent
+
+
 }
+}
+
+@media screen and (max-width: 480px){
+    .header{
+        max-width: 100%padding 18px 0 16px;
+    }
 }

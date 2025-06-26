@@ -31,7 +31,7 @@ night: {
 },
 };
 
-export const defaultClothingItems = [
+export const ClothingItems = [
   {
     _id: 0,
     name: "Cap",

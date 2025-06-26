@@ -1,0 +1,8 @@
+.profile{
+    display: flex;
+    gap: 116px;
+    font-family:"Cabinet-Grotesk", arial, sans-serif;
+    line-height: 24px;
+    margin-top: 20px;
+    text-align: center;
+}

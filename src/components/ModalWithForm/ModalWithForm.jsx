@@ -17,7 +17,7 @@ function ModalWithForm({children, buttonText, title, isOpen, onClose, onSubmit, 
             <button 
             type="submit" 
             className={'modal__submit ${!isValid && "modal__submit_disabled"}'}
-            disabled
+            disabled={!isValid}
             >
               {buttonText}
             </button>
