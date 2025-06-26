@@ -52,6 +52,11 @@ opacity: 0.6;
     line-height: 20px;
 }
 
+.modal__content_type_form {
+  padding: 28px 28px 36px;
+}
+
+
 .modal__form{
     display:flex;
     flex-direction: column;

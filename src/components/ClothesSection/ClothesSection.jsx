@@ -18,7 +18,7 @@ function ClothesSection({ handleAddClick, handleCardClick, ClothingItems}) {
             <ItemCard
               key={item._id}
               item={item}
-              handleCardClick = {handleCardClick}
+              onCardClick={handleAddClick}
               // To do - pass as props - onCardClick={handleCardClick}
             />
           );

@@ -11,9 +11,7 @@ const onCardDelete = () => {
   return (
     <div
       className={`modal ${activeModal === "delete-confirmation" && "modal_opened"}`}
-      Add
-      commentMore
-      actions
+      
     >
       <div className="modal__content modal__content_type_delete">
         <button className="modal__close" type="button" onClick={onClose} />

@@ -32,7 +32,7 @@ function Header({handleAddClick, weatherData, isMobileMenuOpened, toggleMobileMe
        />
   )}
   <div
-    className={`header__nav-container ${isMobileMenuOpened && "mobile-menu"}`}
+    className="header__nav-container mobile-menu"
       >
         <ToggleSwitch />
         <button  
