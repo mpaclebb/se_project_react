@@ -157,7 +157,7 @@ useEffect(() => {
                     handleCardClick={handleCardClick}
                     handleAddClick={handleAddClick}
                     clothingItems={clothingItems}
-                    handleCardDelete={handleCardDelete}
+                    
                   />
                 }
               />

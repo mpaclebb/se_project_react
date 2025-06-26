@@ -1,7 +1,7 @@
 import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({ handleAddClick, handleCardClick, ClothingItems}) {
+function ClothesSection({ handleAddClick, handleCardClick, clothingItems}) {
   return (
     <div className="clothes-section">
       <div className="clothes-section__header">
@@ -13,13 +13,13 @@ function ClothesSection({ handleAddClick, handleCardClick, ClothingItems}) {
         </button>
       </div>
       <ul className="clothes-section__cards-list">
-        {ClothingItems.map((item) => {
+        {clothingItems.map((item) => {
           return (
             <ItemCard
               key={item._id}
               item={item}
-              onCardClick={handleAddClick}
-              // To do - pass as props - onCardClick={handleCardClick}
+              onCardClick={handleCardClick}
+              
             />
           );
         })}
