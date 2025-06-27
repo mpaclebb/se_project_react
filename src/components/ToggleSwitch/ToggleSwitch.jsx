@@ -3,9 +3,10 @@ import "./ToggleSwitch.css";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 const ToggleSwitch = () => {
-  const { CurrentTemperatureUnit, handleToggleSwitchChange } = useContext(
+  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
     CurrentTemperatureUnitContext
   );
+  console.log(currentTemperatureUnit)
 
   //   const [isChecked, setIsChecked] = useState(currentTempUnit === "C");
   //   useEffect(() => setIsChecked(currentTempUnit === "C"), [currentTempUnit]);
@@ -19,18 +20,18 @@ const ToggleSwitch = () => {
       />
       <span
         className={
-          CurrentTemperatureUnit === "F"
+          currentTemperatureUnit === "F"
             ? "toggle-switch__slider toggle-switch__slider-F"
             : "toggle-switch__slider toggle-switch__slider-C"
         }
       />
       <p
-        className={`toggle-switch__temp-F ${CurrentTemperatureUnit === "F" && "toggle-switch__active"}`}
+        className={`toggle-switch__temp-F ${currentTemperatureUnit === "F" && "toggle-switch__active"}`}
       >
         F
       </p>
       <p
-        className={`toggle-switch__temp-C ${CurrentTemperatureUnit === "C" && "toggle-switch__active"}`}
+        className={`toggle-switch__temp-C ${currentTemperatureUnit === "C" && "toggle-switch__active"}`}
       >
         C
       </p>

@@ -11,6 +11,7 @@
   width: 56px;
   height: 28px;
   appearance: none;
+  margin:0;
 }
 
 .toggle-switch__slider {
