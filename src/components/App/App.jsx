@@ -56,10 +56,6 @@ function App() {
       : setCurrentTemperatureUnit("F");
   };
 
-  const onAddIem = (values) => {
-    console.log(values);
-  };
-
   const handleAddItemSubmit = (item) => {
     api
       .addItem(item)
@@ -162,7 +158,7 @@ function App() {
         <AddItemModal
           isOpen={activeModal === "add-garment"}
           onClose={closeActiveModal}
-          onAddIem={handleAddItemSubmit}
+          onAddItem={handleAddItemSubmit}
         />
 
         <ItemModal

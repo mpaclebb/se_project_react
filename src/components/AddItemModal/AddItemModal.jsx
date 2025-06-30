@@ -19,6 +19,7 @@ useFormAndValidation();
 const handleSubmit = (e) => {
    console.log(values);
     e.preventDefault();
+    onAddItem(values);
     console.log("Form data: values");
     resetForm();  
   };
@@ -42,7 +43,7 @@ const handleSubmit = (e) => {
           placeholder="Name"
           value={values.name || ""} //from form validation
           // value={name} need to change name value
-          onChange={setValues} //from form validation
+          onChange={handleChange} //from form validation
           //onChange={handleNameChange}
           required
         />
@@ -55,10 +56,10 @@ const handleSubmit = (e) => {
           className="modal__input"
           id="imageUrl"
           placeholder="Image URL"
-          name="imageURl"
-          value={values.imageurl || ""} //from form validaiton
+          name="imageUrl"
+          value={values.imageUrl || ""} //from form validaiton
           // value={imageUrl}
-          onChange={setValues} // from form validation need to use with handleURLChange
+          onChange={handleChange} // from form validation need to use with handleURLChange
           // onChange={handleImageUrlChange}
           required
         />
