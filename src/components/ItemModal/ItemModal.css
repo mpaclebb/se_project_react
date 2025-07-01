@@ -11,7 +11,7 @@
 .modal__image{
     width: 100%;
     height: 498px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .modal__caption{
@@ -38,6 +38,14 @@
     font-size: 20px;
 }
 
-.modal__delete{ 
+.modal__delete:hover{ 
     cursor: pointer;
+}
+
+.modal__delete_visible {
+  display: block;
+}
+
+.modal__delete_hidden {
+  display: none;
 }

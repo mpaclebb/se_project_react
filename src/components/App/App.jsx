@@ -27,6 +27,7 @@ function App() {
   const [isMobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -57,13 +58,15 @@ function App() {
   };
 
   const handleAddItemSubmit = (item) => {
+    setIsLoading(true);
     api
       .addItem(item)
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
   };
 
   const handleCardDelete = (card) => {
@@ -159,6 +162,7 @@ function App() {
           isOpen={activeModal === "add-garment"}
           onClose={closeActiveModal}
           onAddItem={handleAddItemSubmit}
+          isLoading={isLoading}
         />
 
         <ItemModal

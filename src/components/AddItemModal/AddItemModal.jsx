@@ -1,12 +1,13 @@
 import "./AddItemModal.css"
-import React from "react";
+import React, {useEffect} from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 const AddItemModal = ({
   onClose,
   isOpen,
-  onAddItem
+  onAddItem,
+  isLoading
 }) => {
 
 
@@ -15,13 +16,16 @@ const AddItemModal = ({
   const { values, handleChange, errors, isValid, setValues, resetForm}= 
 useFormAndValidation();
 
- 
+
+useEffect(() => {
+  resetForm();
+}, [isOpen]); 
+
 const handleSubmit = (e) => {
    console.log(values);
     e.preventDefault();
     onAddItem(values);
     console.log("Form data: values");
-    resetForm();  
   };
 
   return (
@@ -73,9 +77,10 @@ const handleSubmit = (e) => {
             type="radio"
             id="hot"
             name="weather"
-            value="Hot"
+            value="hot"
             required
             onChange={handleChange}
+            checked={values.weather === "hot"}
           />
           Hot
         </label>
@@ -86,9 +91,10 @@ const handleSubmit = (e) => {
             type="radio"
             id="warm"
             name="weather"
-            value="Warm"
+            value="warm"
             required
             onChange={handleChange}
+            checked={values.weather === "warm"}
           />
           Warm
         </label>
@@ -99,8 +105,9 @@ const handleSubmit = (e) => {
             type="radio"
             id="cold"
             name="weather"
-            value="Cold"
+            value="cold"
             required
+            checked={values.weather === "cold"}
             onChange={handleChange}
           />
           Cold

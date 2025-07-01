@@ -33,7 +33,7 @@
   padding-bottom: 12px;
 }
 
-.modal__radio-buttons {
+.modal__radio-button {
   display: flex;
   flex-direction: column;
   padding: 0;
